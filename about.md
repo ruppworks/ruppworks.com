@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: 
 permalink: /about/
 ---
 
@@ -11,5 +11,5 @@ applications written in Ruby (Rails), Java, Clojure, and Scala. He
 learned and practiced agile development at its best as a lead
 consultant for ThoughtWorks.
 
-Contact us today to see how we can work for you.
+Contact us today to learn how we can work for you.
 
