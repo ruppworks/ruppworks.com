@@ -1,6 +1,29 @@
+# Instructions to update and deploy as of 2026-03-08
+
+``` bash
+aws --profile ruppworks sso login
+mkdir /tmp/ruppworks.com
+cd /tmp/ruppworks.com
+aws --profile ruppworks s3 sync s3://ruppworks.com .
+# make changes
+aws --profile ruppworks s3 sync . s3://ruppworks.com
+aws --profile ruppworks cloudfront list-distributions
+# find distribution ID; DistributionList.Items[0].Id
+aws --profile ruppworks cloudfront create-invalidation --distribution-id E2URGNHKOTRLEU --paths "/*"
+
+# ALT: use Jekyll + GitHub repo
+cd ~/Developer/ruppworks.com
+# make changes
+jekyll build
+cd _site
+# sync to S3 and invalidate CloudFront as described above
+```
+
+## ARCHIVE
+### previous instructions
 Created with https://jekyllrb.com/
 
-# Deployment
+### Deployment
 
 ``` bash
 # install s3_website gem
